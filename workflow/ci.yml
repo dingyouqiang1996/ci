@@ -1,0 +1,24 @@
+name: Build and Test Docker Image
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Build Docker image
+        run: |
+          docker build -t hkccr.ccs.tencentyun.com/rasp/ci:bilibili-v1 ./bilibili
+
+      - name: Push Docker image
+        run: |
+          echo 'chelsea1996!@#' | docker login hkccr.ccs.tencentyun.com --username=100012465357 --password-stdin
+          docker push hkccr.ccs.tencentyun.com/rasp/ci:bilibili-v1 ./bilibili
