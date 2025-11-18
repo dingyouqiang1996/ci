@@ -8,7 +8,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-24.04-arm
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
@@ -20,5 +20,5 @@ jobs:
 
       - name: Push Docker image
         run: |
-          echo 'chelsea1996!@#' | docker login hkccr.ccs.tencentyun.com --username=100012465357 --password-stdin
+          echo '${{ secrets.DOCKER_PULL_REGISTRY_SECRET }}' | docker login hkccr.ccs.tencentyun.com --username=100012465357 --password-stdin
           docker push hkccr.ccs.tencentyun.com/rasp/ci:bilibili-v1
