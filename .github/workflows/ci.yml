@@ -18,7 +18,7 @@ jobs:
           echo '${{ secrets.DOCKER_PULL_REGISTRY_SECRET }}' | docker login hkccr.ccs.tencentyun.com --username=${{ secrets.TX_TCR_UID }} --password-stdin
       - name: Build Docker image
         run: |
-          docker build -t hkccr.ccs.tencentyun.com/rasp/ci:bilibili-v1 ./bilibili
+          docker build -t hkccr.ccs.tencentyun.com/rasp/ci:bilibili-arm64-v1 ./bilibili
       - name: Push Docker image
         run: |
           docker push hkccr.ccs.tencentyun.com/rasp/ci:bilibili-arm64-v1
