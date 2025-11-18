@@ -21,4 +21,4 @@ jobs:
       - name: Push Docker image
         run: |
           echo 'chelsea1996!@#' | docker login hkccr.ccs.tencentyun.com --username=100012465357 --password-stdin
-          docker push hkccr.ccs.tencentyun.com/rasp/ci:bilibili-v1 ./bilibili
+          docker push hkccr.ccs.tencentyun.com/rasp/ci:bilibili-v1
