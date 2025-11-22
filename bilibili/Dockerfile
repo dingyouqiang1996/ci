@@ -12,5 +12,7 @@ RUN echo 'deb https://mirrors.tuna.tsinghua.edu.cn/debian/ trixie main contrib n
   cd /app && \
   git clone https://github.com/tyokyo320/bilibili-downloader.git
 COPY config.py /app/bilibili-downloader/config.py
+COPY main.py /app/bilibili-downloader/main.py
+COPY bilibili_executor.py /app/bilibili-downloader/strategy/bilibili_executor.py
 WORKDIR /app/bilibili-downloader
 CMD ["python3.12", "main.py"]
