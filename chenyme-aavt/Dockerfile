@@ -2,6 +2,7 @@ FROM python:3.11
 
 EXPOSE 8501
 ENV DEBIAN_FRONTEND=noninteractive
+ENV HF_ENDPOINT=https://hf-mirror.com
 
 COPY . /app
 
