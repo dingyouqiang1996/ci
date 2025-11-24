@@ -18,7 +18,7 @@ jobs:
           echo '${{ secrets.DOCKER_PULL_REGISTRY_SECRET }}' | docker login hkccr.ccs.tencentyun.com --username=${{ secrets.TX_TCR_UID }} --password-stdin
       - name: Build Docker image
         run: |
-          docker build -t hkccr.ccs.tencentyun.com/rasp/ci:torrentp-arm64-v2 ./torrentp
+          docker build -t hkccr.ccs.tencentyun.com/rasp/ci:bypy-arm64-v1 ./bypy
       - name: Push Docker image
         run: |
-          docker push hkccr.ccs.tencentyun.com/rasp/ci:torrentp-arm64-v2
+          docker push hkccr.ccs.tencentyun.com/rasp/ci:bypy-arm64-v1
