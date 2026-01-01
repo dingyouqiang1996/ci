@@ -18,7 +18,9 @@ jobs:
           echo '${{ secrets.DOCKER_PULL_REGISTRY_SECRET }}' | docker login hkccr.ccs.tencentyun.com --username=${{ secrets.TX_TCR_UID }} --password-stdin
       - name: Build Docker image
         run: |
-          docker build -t hkccr.ccs.tencentyun.com/rasp/ci:jumpserver-v1 ./jumpserver
+          # docker build -t hkccr.ccs.tencentyun.com/rasp/ci:jumpserver-v1 ./jumpserver
+          docker build -t ccr.ccs.tencentyun.com/panfulu/rasp:python3.10 ./python
       - name: Push Docker image
         run: |
-          docker push hkccr.ccs.tencentyun.com/rasp/ci:jumpserver-v1
+          # docker push hkccr.ccs.tencentyun.com/rasp/ci:jumpserver-v1
+          docker push ccr.ccs.tencentyun.com/panfulu/rasp:python3.10
