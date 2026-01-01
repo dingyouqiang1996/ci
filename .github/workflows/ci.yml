@@ -16,7 +16,7 @@ jobs:
       - name: Docker Login
         run: |
           # echo '${{ secrets.DOCKER_PULL_REGISTRY_SECRET }}' | docker login ccr.ccs.tencentyun.com --username=${{ secrets.guangzhou_ccr_password }} --password-stdin
-          echo '${{ secrets.DOCKER_PULL_REGISTRY_SECRET }}' | docker login ccr.ccs.tencentyun.com --username=${{ secrets.guangzhou_ccr_password }} --password-stdin
+          echo '${{ secrets.GUANGZHOU_CCR_PASSWORD }}' | docker login ccr.ccs.tencentyun.com --username=${{ secrets.GUANGZHOU_CCR_USERNAME }} --password-stdin
       - name: Build Docker image
         run: |
           # docker build -t hkccr.ccs.tencentyun.com/rasp/ci:jumpserver-v1 ./jumpserver
