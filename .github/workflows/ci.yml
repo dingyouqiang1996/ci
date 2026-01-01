@@ -15,7 +15,8 @@ jobs:
         uses: actions/checkout@v4
       - name: Docker Login
         run: |
-          echo '${{ secrets.DOCKER_PULL_REGISTRY_SECRET }}' | docker login hkccr.ccs.tencentyun.com --username=${{ secrets.guangzhou_ccr_password }} --password-stdin
+          # echo '${{ secrets.DOCKER_PULL_REGISTRY_SECRET }}' | docker login ccr.ccs.tencentyun.com --username=${{ secrets.guangzhou_ccr_password }} --password-stdin
+          echo '${{ secrets.DOCKER_PULL_REGISTRY_SECRET }}' | docker login ccr.ccs.tencentyun.com --username=${{ secrets.guangzhou_ccr_password }} --password-stdin
       - name: Build Docker image
         run: |
           # docker build -t hkccr.ccs.tencentyun.com/rasp/ci:jumpserver-v1 ./jumpserver
