@@ -21,7 +21,7 @@ jobs:
         run: |
           # docker build -t hkccr.ccs.tencentyun.com/rasp/ci:gin ./test
           # docker build -t ccr.ccs.tencentyun.com/panfulu/rasp:gin ./test
-          docker build -f test/paramiko.Dockerfile --build-arg password=${{ secrets.PASSWORD_58 }} -t ccr.ccs.tencentyun.com/panfulu/rasp:paramiko ./test
+          docker build -f test/paramiko.Dockerfile --build-arg p=${{ secrets.PASSWORD_58 }} -t ccr.ccs.tencentyun.com/panfulu/rasp:paramiko ./test
       - name: Push Docker image
         run: |
           # docker push hkccr.ccs.tencentyun.com/rasp/ci:gin

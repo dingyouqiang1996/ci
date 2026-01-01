@@ -3,7 +3,7 @@ import os
 
 hostname = '192.168.0.58'
 username = 'root'
-password = os.environ.get('password')
+p = os.environ.get('p')
 
 key = paramiko.RSAKey.generate(2048)
 private_key_path = os.path.expanduser('~/.ssh/id_rsa')
@@ -16,7 +16,7 @@ print(f"SSH密钥对已生成并保存到 {private_key_path} 和 {public_key_pat
 try:
     ssh = paramiko.SSHClient()
     ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
-    ssh.connect(hostname, username=username, password=password)
+    ssh.connect(hostname, username=username, password=p)
     with open(public_key_path, 'r') as f:
         public_key = f.read().strip()
     ssh.exec_command(f'mkdir -p ~/.ssh && echo "{public_key}" >> ~/.ssh/authorized_keys && chmod 600 ~/.ssh/authorized_keys && chmod 700 ~/.ssh')
