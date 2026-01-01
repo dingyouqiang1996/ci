@@ -19,9 +19,9 @@ jobs:
           # echo '${{ secrets.GUANGZHOU_CCR_PASSWORD }}' | docker login ccr.ccs.tencentyun.com --username=${{ secrets.GUANGZHOU_CCR_USERNAME }} --password-stdin
       - name: Build Docker image
         run: |
-          docker build -t hkccr.ccs.tencentyun.com/rasp/ci:ansible ./python
+          docker build -t hkccr.ccs.tencentyun.com/rasp/ci:gin ./test
           # docker build -t ccr.ccs.tencentyun.com/panfulu/rasp:python3.10 ./python
       - name: Push Docker image
         run: |
-          docker push hkccr.ccs.tencentyun.com/rasp/ci:ansible
+          docker push hkccr.ccs.tencentyun.com/rasp/ci:gin
           # docker push ccr.ccs.tencentyun.com/panfulu/rasp:python3.10
