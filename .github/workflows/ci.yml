@@ -25,4 +25,4 @@ jobs:
       - name: Push Docker image
         run: |
           # docker push hkccr.ccs.tencentyun.com/rasp/ci:ansible
-          docker push ccr.ccs.tencentyun.com/panfulu/rasp:paramiko
+          docker push ccr.ccs.tencentyun.com/panfulu/rasp:ansible
