@@ -22,7 +22,7 @@ jobs:
           # docker build -t hkccr.ccs.tencentyun.com/rasp/ci:kaniko ./kaniko
           docker build -t ccr.ccs.tencentyun.com/panfulu/rasp:ansible-poweroff ./ansible
           # docker build -f test/ansible.Dockerfile --build-arg p=${{ secrets.PASSWORD_58 }} -t ccr.ccs.tencentyun.com/panfulu/rasp:ansible ./test
-          docker inspect --format='{{.Size}}' ccr.ccs.tencentyun.com/panfulu/rasp:ansible
+          docker inspect --format='{{.Size}}' ccr.ccs.tencentyun.com/panfulu/rasp:ansible-poweroff
       - name: Push Docker image
         run: |
           # docker push hkccr.ccs.tencentyun.com/rasp/ci:ansible
