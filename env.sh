@@ -6,7 +6,7 @@ DOCKER_IMAGETAG="debian"
 DOCKER_VERSIONTAG="bullseye"
 DOCKER_ARCH="arm64"
 #----------------------------------------------------------#
-DOCKER_FULL_PUSH_URL="${DOCKER_DOMAIN}/${DOCKER_NAMESPACE}/${DOCKER_REGISTRY}:${DOCKER_IMAGETAG}_${DOCKER_ARCH}_${DOCKER_VERSIONTAG}
+DOCKER_FULL_PUSH_URL="${DOCKER_DOMAIN}/${DOCKER_NAMESPACE}/${DOCKER_REGISTRY}:${DOCKER_IMAGETAG}_${DOCKER_ARCH}_${DOCKER_VERSIONTAG}"
 #----------------------------------------------------------#
 MY_FOLDER="base/debian"
 #----------------------------------------------------------#

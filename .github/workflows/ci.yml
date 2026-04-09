@@ -17,7 +17,7 @@ jobs:
 
       - name: Docker Login
         run: |
-          source ./env
+          source ./env.sh
           echo \
             '${{ secrets.DOCKER_PULL_REGISTRY_SECRET }}' | \
             docker login ${DOCKER_DOMAIN} \
@@ -26,10 +26,10 @@ jobs:
 
       - name: Build Docker image
         run: |
-          source ./env
+          source ./env.sh
           docker build -t ${DOCKER_FULL_PUSH_URL} ./${MY_FOLDER}
 
       - name: Push Docker image
         run: |
-          source ./env
+          source ./env.sh
           docker push ${DOCKER_FULL_PUSH_URL}
