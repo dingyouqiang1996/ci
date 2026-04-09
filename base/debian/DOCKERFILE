@@ -1,7 +1,5 @@
 FROM debian:bullseye
 
-LABEL AUTHER=<changqing.shen@tenclass.com>
-
 RUN sed -i 's/deb.debian.org/mirrors.tencentyun.com/g' /etc/apt/sources.list && \
     sed -i 's/security.debian.org/mirrors.tencentyun.com/g' /etc/apt/sources.list && \
     apt-get update && apt-get install gettext -y && apt-get clean
