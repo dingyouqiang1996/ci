@@ -1,7 +1,7 @@
 FROM debian:bullseye
 
-RUN sed -i 's/deb.debian.org/mirrors.tencentyun.com/g' /etc/apt/sources.list && \
-    sed -i 's/security.debian.org/mirrors.tencentyun.com/g' /etc/apt/sources.list && \
+RUN sed -i 's/deb.debian.org/mirrors.tencent.com/g' /etc/apt/sources.list && \
+    sed -i 's/security.debian.org/mirrors.tencent.com/g' /etc/apt/sources.list && \
     apt-get update && apt-get install gettext -y && apt-get clean
 
 ENV TZ=Asia/Shanghai LANG=C.UTF-8
