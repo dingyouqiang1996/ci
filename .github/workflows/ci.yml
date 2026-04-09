@@ -19,9 +19,9 @@ jobs:
         run: |
           source ./env.sh
           echo \
-            '${{ secrets.DOCKER_PULL_REGISTRY_SECRET }}' | \
+            '${{ secrets.TENCENT_HKCCR_PASSWORD }}' | \
             docker login ${DOCKER_DOMAIN} \
-            --username=${{ secrets.TX_TCR_UID }} \
+            --username=${{ secrets.TENCENT_HKCCR_USERNAME }} \
             --password-stdin
 
       - name: Build Docker image
