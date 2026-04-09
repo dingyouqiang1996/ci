@@ -1,1 +1,0 @@
-FROM eipwork/nfs-client-provisioner:v3.1.0-k8s1.11

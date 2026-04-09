@@ -1,2 +1,0 @@
-FROM python:3.10.19-slim-trixie
-RUN python -m pip install ansible

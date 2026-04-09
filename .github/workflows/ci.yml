@@ -15,15 +15,10 @@ jobs:
         uses: actions/checkout@v4
       - name: Docker Login
         run: |
-          # echo '${{ secrets.GUANGZHOU_CCR_PASSWORD }}' | docker login hkccr.ccs.tencentyun.com --username=${{ secrets.TX_TCR_UID }} --password-stdin
-          echo '${{ secrets.GUANGZHOU_CCR_PASSWORD }}' | docker login ccr.ccs.tencentyun.com --username=${{ secrets.GUANGZHOU_CCR_USERNAME }} --password-stdin
+          echo '${{ secrets.GUANGZHOU_CCR_PASSWORD }}' | docker login hkccr.ccs.tencentyun.com --username=${{ secrets.TX_TCR_UID }} --password-stdin
       - name: Build Docker image
         run: |
-          # docker build -t hkccr.ccs.tencentyun.com/rasp/ci:kaniko ./kaniko
-          docker build -t ccr.ccs.tencentyun.com/panfulu/rasp:nfs-provisoner ./nfs-provisoner
-          # docker build -f test/ansible.Dockerfile --build-arg p=${{ secrets.PASSWORD_58 }} -t ccr.ccs.tencentyun.com/panfulu/rasp:ansible ./test
-          # docker inspect --format='{{.Size}}' ccr.ccs.tencentyun.com/panfulu/rasp:ansible-poweroff
+          docker build -t hkccr.ccs.tencentyun.com/rasp/ci:kaniko ./kaniko
       - name: Push Docker image
         run: |
-          # docker push hkccr.ccs.tencentyun.com/rasp/ci:ansible
-          docker push ccr.ccs.tencentyun.com/panfulu/rasp:nfs-provisoner
+          docker push hkccr.ccs.tencentyun.com/rasp/ci:ansible

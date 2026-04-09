@@ -1,2 +1,2 @@
-# CI机
-- for tekton
+# CI
+- 公网镜像制作
