@@ -8,17 +8,28 @@ on:
 
 jobs:
   build:
+    # runs-on: ubuntu-24.04
     runs-on: ubuntu-24.04-arm # 需要将仓库改为public后运行此job, 否则失败
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+
       - name: Docker Login
         run: |
-          echo '${{ secrets.GUANGZHOU_CCR_PASSWORD }}' | docker login hkccr.ccs.tencentyun.com --username=${{ secrets.TX_TCR_UID }} --password-stdin
+          source env
+          echo \
+            '${{ secrets.DOCKER_PULL_REGISTRY_SECRET }}' | \
+            docker login ${DOCKER_DOMAIN} \
+            --username=${{ secrets.TX_TCR_UID }} \
+            --password-stdin
+
       - name: Build Docker image
         run: |
-          docker build -t hkccr.ccs.tencentyun.com/rasp/ci:kaniko ./kaniko
+          source env
+          docker build -t ${DOCKER_FULL_PUSH_URL} ./${MY_FOLDER}
+
       - name: Push Docker image
         run: |
-          docker push hkccr.ccs.tencentyun.com/rasp/ci:ansible
+          source env
+          docker push ${DOCKER_FULL_PUSH_URL}
