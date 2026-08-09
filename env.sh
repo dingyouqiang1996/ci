@@ -2,11 +2,11 @@
 DOCKER_DOMAIN="hkccr.ccs.tencentyun.com"
 DOCKER_NAMESPACE="rasp"
 DOCKER_REGISTRY="ci"
-DOCKER_IMAGETAG="coscli"
+DOCKER_IMAGETAG="mc"
 DOCKER_VERSIONTAG="v1"
 DOCKER_ARCH="arm64"
 #----------------------------------------------------------#
 DOCKER_FULL_PUSH_URL="${DOCKER_DOMAIN}/${DOCKER_NAMESPACE}/${DOCKER_REGISTRY}:${DOCKER_IMAGETAG}_${DOCKER_ARCH}_${DOCKER_VERSIONTAG}"
 #----------------------------------------------------------#
-MY_FOLDER="coscli"
+MY_FOLDER="mc"
 #----------------------------------------------------------#
