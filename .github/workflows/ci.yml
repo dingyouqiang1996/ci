@@ -19,9 +19,9 @@ jobs:
         run: |
           source ./env.sh
           echo \
-            '${{ secrets.TENCENT_HKCCR_PASSWORD }}' | \
+            '${{ secrets.GUANGZHOU_CCR_PASSWORD }}' | \
             docker login ${DOCKER_DOMAIN} \
-            --username=${{ secrets.TENCENT_HKCCR_USERNAME }} \
+            --username=${{ secrets.GUANGZHOU_CCR_USERNAME }} \
             --password-stdin
 
       - name: Build Docker image
