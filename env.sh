@@ -2,7 +2,7 @@
 DOCKER_DOMAIN="ccr.ccs.tencentyun.com"
 DOCKER_NAMESPACE="rasp-gz"
 DOCKER_REGISTRY="bypy"
-DOCKER_IMAGETAG="rclone"
+DOCKER_IMAGETAG="bypy"
 DOCKER_VERSIONTAG="v1"
 DOCKER_ARCH="arm64"
 #----------------------------------------------------------#
