@@ -1,12 +1,12 @@
 #----------------------------------------------------------#
 DOCKER_DOMAIN="ccr.ccs.tencentyun.com"
 DOCKER_NAMESPACE="rasp-gz"
-DOCKER_REGISTRY="bypy"
-DOCKER_IMAGETAG="rclone"
+DOCKER_REGISTRY="ci"
+DOCKER_IMAGETAG="etcdctl"
 DOCKER_VERSIONTAG="v1"
 DOCKER_ARCH="arm64"
 #----------------------------------------------------------#
 DOCKER_FULL_PUSH_URL="${DOCKER_DOMAIN}/${DOCKER_NAMESPACE}/${DOCKER_REGISTRY}:${DOCKER_IMAGETAG}_${DOCKER_ARCH}_${DOCKER_VERSIONTAG}"
 #----------------------------------------------------------#
-MY_FOLDER="bypy"
+MY_FOLDER="etcdctl"
 #----------------------------------------------------------#
