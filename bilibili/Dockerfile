@@ -1,0 +1,1 @@
+FROM hkccr.ccs.tencentyun.com/rasp/ci:bilibili-arm64-v4
